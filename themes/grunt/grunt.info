@@ -1,5 +1,0 @@
-name = grunt
-description = foobar
-core = 7.x
-
-stylesheets[all][] = bundle.css

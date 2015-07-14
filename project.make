@@ -11,3 +11,7 @@ defaults[projects][subdir] = contrib
 
 ; Platform indicator module.
 projects[platform][version] = 1.3
+
+; Composer Manager module.
+projects[composer_manager][version] = "1.7"
+projects[composer_manager][subdir] = "contrib"

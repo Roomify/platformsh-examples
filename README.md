@@ -1,22 +1,17 @@
-#Drupal 7.0 Example with Grunt for building Sass files for a theme
+# Drupal 7.0 Example for updating composer dependencies on deploy
 
-In this example we show how to include dependencies on non PHP technologies; Specifically here we add the nodejs Grunt
-library and the Ruby Sass Gem.
+Using composer_manager on platform.sh is slightly tricky, because the libraries directory (standard destination for composer-installed libraries) is read-only after deploy. So, we use a two-pronged approach:
+
+1. Go to /admin/config/system/composer-manager/settings and set the 'Vendor Directory' to 'sites/default/files/composer/libraries', (Assuing a standard single-site setup) save the configuration, and press the 'Rebuild composer.json file' button.
+1. Edit your .app.platform.yaml file and add/modify the deploy hook as follows:
 
 See `.app.platform.yaml`
 
 ```yaml
-dependencies:
-    ruby:
-        sass: "3.4.7"
-    nodejs:
-        grunt-cli: "~0.1.13"
-```
-In the "build hook" we run the grunt task.
+In the "deploy hook" we run composer.
 ```
 hooks:
-    build: |
-      cd public/sites/default/themes/grunt/
-      npm install
-      grunt
+    deploy: |
+      cd /app/public/sites/default/files/composer
+      composer update
 ```
