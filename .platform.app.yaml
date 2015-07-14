@@ -34,13 +34,12 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-    build: |
-      cd public/sites/default/themes/grunt/
-      npm install
-      grunt
+
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-      cd public
+      cd /app/public/sites/default/files/composer
+      composer update
+      cd /app/public
       drush -y updatedb
 
 # The configuration of scheduled execution.
@@ -48,9 +47,3 @@ crons:
     drupal:
         spec: "*/20 * * * *"
         cmd: "cd public ; drush core-cron"
-
-dependencies:
-    ruby:
-        sass: "3.4.7"
-    nodejs:
-        grunt-cli: "~0.1.13"
