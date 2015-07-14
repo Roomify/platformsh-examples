@@ -5,10 +5,6 @@ Using composer_manager on platform.sh is slightly tricky, because the libraries 
 1. Go to /admin/config/system/composer-manager/settings and set the 'Vendor Directory' to 'sites/default/files/composer/libraries', (Assuing a standard single-site setup) save the configuration, and press the 'Rebuild composer.json file' button.
 1. Edit your .app.platform.yaml file and add/modify the deploy hook as follows:
 
-See `.app.platform.yaml`
-
-```yaml
-In the "deploy hook" we run composer.
 ```
 hooks:
     deploy: |
