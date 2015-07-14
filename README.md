@@ -13,6 +13,7 @@ Each example is a specific branch that you can use as a starting point for your 
 * [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
 * [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
 * [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
+* [drupal/7.x-composer_manager](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-composer_manager)
 * [drupal/8.x-commerce](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x-commerce)
 
 ### Symfony
